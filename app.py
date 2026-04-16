@@ -139,7 +139,7 @@ def vis_kandidatside():
 def vis_innlogging():
     col_left, col_center, col_right = st.columns([1, 2, 1])
     with col_center:
-        st.title("HR-portal")
+        st.title("Ledige stillinger i ABC konsern")
         st.markdown("Logg inn med ditt selskaps passord for å administrere stillinger.")
         st.divider()
 
@@ -169,7 +169,7 @@ def vis_hr_portal():
     # ── Topplinje ──────────────────────────────────────────────────────────────
     col_tittel, col_logout = st.columns([5, 1])
     with col_tittel:
-        st.title(f"HR-portal – {selskap}")
+        st.title(f"Ledige stillinger i ABC konsern – {selskap}")
     with col_logout:
         st.markdown("")  # Litt luft over knappen
         if st.button("Logg ut", use_container_width=True):
