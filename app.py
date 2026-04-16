@@ -20,6 +20,51 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
+# ── Ferd-styling ───────────────────────────────────────────────────────────────
+
+st.markdown("""
+<style>
+/* Topplinje */
+header[data-testid="stHeader"] {
+    background-color: #32373C;
+}
+
+/* Alle knapper */
+.stButton > button,
+.stFormSubmitButton > button {
+    background-color: #32373C !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 3px !important;
+    font-weight: 600 !important;
+}
+.stButton > button:hover,
+.stFormSubmitButton > button:hover {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+/* Overskrifter */
+h1, h2, h3 {
+    color: #32373C !important;
+    font-weight: 700 !important;
+}
+
+/* Ferd-etikett øverst */
+.ferd-header {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 0.25rem;
+    margin-top: -0.5rem;
+}
+</style>
+
+<div class="ferd-header">Ferd-konsernet</div>
+""", unsafe_allow_html=True)
+
 # ── Konstanter ─────────────────────────────────────────────────────────────────
 
 SELSKAPER = [
@@ -139,7 +184,7 @@ def vis_kandidatside():
 def vis_innlogging():
     col_left, col_center, col_right = st.columns([1, 2, 1])
     with col_center:
-        st.title("Ledige stillinger i ABC konsern")
+        st.title("HR-portal")
         st.markdown("Logg inn med ditt selskaps passord for å administrere stillinger.")
         st.divider()
 
@@ -169,7 +214,7 @@ def vis_hr_portal():
     # ── Topplinje ──────────────────────────────────────────────────────────────
     col_tittel, col_logout = st.columns([5, 1])
     with col_tittel:
-        st.title(f"Ledige stillinger i ABC konsern – {selskap}")
+        st.title(f"HR-portal – {selskap}")
     with col_logout:
         st.markdown("")  # Litt luft over knappen
         if st.button("Logg ut", use_container_width=True):
